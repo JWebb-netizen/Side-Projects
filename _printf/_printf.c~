@@ -1,0 +1,19 @@
+#include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+
+int _printf(const char *format, ...)
+{
+	/*int count = 0;*/
+	char helper[50];
+	while (*format != '\0')
+	{
+		helper[0] = format;
+		helper++;
+	}
+
+	printf("%s",helper);
+	/*count = _countchar(&format);*/
+	/*printf("%d\n", count);*/
+	return(write(1, &helper, 10));
+}

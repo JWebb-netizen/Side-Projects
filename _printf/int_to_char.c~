@@ -1,0 +1,16 @@
+#include "main.h"
+#include <stdarg.h>
+
+char int_to_char(int ***x)
+{
+	char a;
+	int j = ***x;
+
+	a = 0;
+	while (j / 10 > 0)
+	{
+		a = (j % 10) + '0';
+		j = ***x / 10;
+	}
+	return (a);
+}

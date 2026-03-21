@@ -1,0 +1,8 @@
+#include "main.h"
+
+int main(void)
+{
+	_printf("Hello, World\n");
+	_printf("Good day to you sir!\n");
+	return (0);
+}

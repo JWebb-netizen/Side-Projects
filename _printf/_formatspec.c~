@@ -1,0 +1,30 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
+
+void _formatspec(char *c, const char **format)
+{
+	va_list args;
+	int ival = 0;
+	int a = 0;
+
+	va_start(args, **format);
+	switch(**format){
+	case '%':
+		*c = '%';
+		break;
+	case 'd':
+		ival = va_arg(args, int);
+		do {
+		a = (ival % 10) + '0';
+		ival = ival / 10;
+		*c = a;
+		c++;
+		} while (ival / 10 > 0)
+		break;
+	default:
+		*c = **format;
+	}
+	va_end(args);
+	return;
+}
